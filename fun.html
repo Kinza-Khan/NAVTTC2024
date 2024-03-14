@@ -9,14 +9,21 @@
 
 <body>
 
+    <label for="">User Name</label>
+    <input type="text" id="userName">
+    <button onclick="greet()">Submit</button>
+
+    <h1></h1>
 
     <script>
         // ES5 
+        // named function
         function greet() {
-            // console.log("hello Hi");
-            return "Hello How are you?";
+            let userName = document.querySelector("#userName").value;
+            let printData = document.querySelector("h1");
+            printData.innerHTML = "hello " + userName;
         }
-        console.log(greet());
+
     </script>
 </body>
 
