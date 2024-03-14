@@ -1,0 +1,128 @@
+/* header css */
+header .container {
+    /* border: 2px solid black; */
+    height: 120px;
+    /* background-color: yellow; */
+}
+header .container .navbar{
+    height: inherit;
+    width: 90%;
+    /* background-color: rgb(23, 23, 52); */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.navbar .logo{
+    height: inherit;
+    width: 12%;
+    /* background-color: orange; */
+}
+.navbar .nav{
+    height: inherit;
+    width: 85%;
+    /* background-color: green; */
+}
+.navbar .logo img{
+    height: 40px;
+    position: relative;
+    top: 30px;
+}
+.navbar .nav ul {
+    /* background-color: aliceblue; */
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    top: 15px;
+}   
+.navbar .nav ul li{
+    display: inline;
+    /* color: white; */
+    padding: 10px;
+    /* background-color: #233d7b; */
+    margin-left: 15px;
+}
+
+.navbar  button {
+    height: 40px;
+    position: relative;
+    top: 40px;
+    width: 150px;
+    background-color: #b73439 ;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+}
+
+
+
+/* .d{
+    height: 200px;
+    width: 200px;
+    border:  1px solid black;
+}
+   
+.d1{
+
+    position: relative;
+    top: 40px;
+    background-color: green;
+}
+.d2{
+    background-color: yellow;
+} */
+
+/* yahan sy flex ki css ha */
+.container{
+    /* border: 2px solid yellowgreen; */
+}
+.row{
+    /* height: 300px; */
+    /* border:  1px solid red; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+
+}
+.d{
+    height: 250px;
+    width: 250px;
+    border-radius: 3px;
+    border: 1px solid rgb(179, 176, 176);
+    /* background-color: gray; */
+}
+.container h1{
+    width: 400px;
+   position: relative;
+   left: 50px;
+   /* background-color: yellow; */
+}
+
+.imgDiv{
+    /* border: 1px solid yellow; */
+    height: 170px;
+}
+.imgDiv img{
+    height: 170px;
+}
+.content{
+    height: 60px;
+     /* border: 1px solid blue; */
+     position: relative;
+     top: 10px;
+}
+.content h3{
+    /* background-color: yellow; */
+    text-align: center;
+    position: relative;
+    top: -10px;
+    color: #233d7b;
+}
+.content p{
+    position: relative;
+    top: -25px;
+    text-align: center;
+    color: #3eb549;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data types</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="userAge"></h1>
+        <h2 id="data"></h2>
+        <h3></h3>
+        <h4></h4>
+    </div>
+    <script>
+
+        // // console.log(stdAge);
+        // // var stdAge = 21;
+
+        // console.log(stdAge);
+        let stdAge = 21;
+        let stdName = "Hamza";
+        let stdEmail = "ali@gmail.com";
+        let stdCity = "karachi";
+        document.getElementById('userAge').innerHTML = stdAge;
+        //Assignments operators , == , !=  , > , < ,<= ,>= , ===  , !==
+        let num1 = 10;
+        let num2 = 23;
+        let res = num1 > num2; // false
+        let res2 = num1 < num2; //true
+        let res3Equal = num1 == num2;
+        let resNotEqual = num1 != num2;
+        let printData = document.getElementById('data');
+        printData.innerHTML = res + " ";
+        printData.innerHTML += res2 + " ";
+        printData.innerHTML += res3Equal + " ";
+        printData.innerHTML += resNotEqual;
+
+        let n1 = 10;
+        let n2 = '10';
+        let finalRes = n1 === n2; // check  vlaues and datatype both false
+        let finalRes2 = n1 == n2  // check only vlaues; true
+        printData.innerHTML += " strict Equal Opertor " + finalRes + " ";
+        printData.innerHTML += finalRes2;
+
+
+
+        
+
+    </script>
+</body>
+
+</html>

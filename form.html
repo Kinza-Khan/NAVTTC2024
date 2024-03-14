@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+
+    <form action="">
+        <div class="form-group">
+            <label for="">User Name</label>
+            <input type="text" pattern="[aA-zZ]{3,}" required placeholder="user name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">User Email</label>
+            <input type="email" pattern="[a-z0-9_.]{5,}@[a-z]{5}.[a-z]{3}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">User Password</label>
+            <input required type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">select Country</label>
+            <select name="" id="">
+                <option value="">Select</option>
+                <option value="">Pakistan</option>
+                <option value="">India</option>
+                <option value="">China</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Choose Image</label>
+            <input type="file">
+        </div>
+
+        <div class="form-group">
+            <label for="">select Gender</label>
+            <label for="">male</label>
+            <input type="radio" name="g">
+            <label for="">female</label>
+            <input type="radio" name="g" id="">
+        </div>
+
+        <div class="form-group">
+            <label for="">select range</label>
+            <input type="range" name="" id="">
+        </div>
+        <div class="form-group">
+            <label for="">select </label>
+            <input type="date" name="" id="">
+        </div>
+        <button>Submit</button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical</title>
+</head>
+
+<body>
+    <p id="para">
+
+    </p>
+
+    <script>
+        let userName = "aqsa";
+        let userPass = 1234;
+        let data = document.getElementById("para");
+
+        // data.innerHTML = ((userName == "aqsa") && (userPass == 1234));
+        // data.innerHTML = ((userName == "asim") || (userPass == 1234));
+        data.innerHTML = (!((userName == "aqsa") && (userPass == 1234)));
+    </script>
+
+
+</body>
+
+</html>
