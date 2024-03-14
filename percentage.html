@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Task</title>
+    <link rel="stylesheet" href="per.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label for="">Physics</label>
+            <input type="text" id="phy">
+        </div>
+        <div class="form-group">
+            <label for="">Chemistry</label>
+            <input type="text" id="chem">
+        </div>
+        <div class="form-group">
+            <label for="">Maths</label>
+            <input type="text" id="maths">
+        </div>
+        <div class="form-group">
+            <label for="">English</label>
+            <input type="text" id="eng">
+        </div>
+        <div class="form-group">
+            <label for="">Urud</label>
+            <input type="text" id="ur">
+        </div>
+        <button onclick="fun()">Submit</button>
+        <h1></h1>
+    </div>
+
+</body>
+<script>
+    let fun = () => {
+        let phyMarks = parseInt(document.querySelector('#phy').value);
+        let chemMarks = parseInt(document.querySelector('#chem').value);
+        let engMarks = parseInt(document.querySelector('#eng').value);
+        let urMarks = parseInt(document.querySelector('#ur').value);
+        let mathsMarks = parseInt(document.querySelector('#maths').value);
+
+        let obtainMarks = phyMarks + chemMarks + engMarks + urMarks + mathsMarks;
+
+        // console.log(obtainMarks);
+        let per = ((obtainMarks / 500) * 100).toFixed(2);
+        let printData = document.querySelector('h1');
+        printData.innerHTML = per + " % ";
+        // if statement
+        // else if statement
+        // nested if statement
+        // else  statement
+        if (per >= 80 && per <= 100) {
+            printData.innerHTML += "Your Grade is A+";
+        }
+        else if (per >= 70 && per < 80) {
+            printData.innerHTML += "Your Grade is A";
+        }
+        else if (per >= 60 && per < 70) {
+            printData.innerHTML += "Your Grade is B";
+        }
+        else if (per >= 50 && per < 60) {
+            printData.innerHTML += "Your Grade is C";
+        }
+        else if (per >= 40 && per < 50) {
+            printData.innerHTML += "Your Grade is D";
+        }
+        else if (per < 40 && per > 0) {
+            printData.innerHTML += "fail";
+        }
+        else {
+            printData.innerHTML += "invalid";
+        }
+    }
+</script>
+
+</html>
