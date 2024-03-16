@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #tb {
+        display: none;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 500px;
+    }
+</style>
+
+<body>
+    <h1>admission eligibilty criteria</h1>
+    <input type="text" name="" id="userGrad">
+    <button id="btn" onclick="admissionCriteria()">click</button>
+    <p id="show"></p>
+    <div id="tb">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>chemistry</th>
+                    <th>physics</th>
+                    <th>maths</th>
+                    <th>urdu</th>
+                    <th>english</th>
+
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function admissionCriteria() {
+            let userGrad = document.querySelector("#userGrad").value.toUpperCase();
+            let showPara = document.querySelector("#show");
+            if (userGrad == "A") {
+                showPara.innerHTML = " you may eligibale for take admission in medical or engineering ";
+                showPara.style.color = "green";
+
+            } else if (userGrad == "B") {
+                showPara.innerHTML = " you may eligibale for take admission in  engineering or commerce";
+                showPara.style.color = "green";
+            } else if (userGrad == "C" || userGrad == "D") {
+                showPara.innerHTML = " you may eligibale for take admission in  Arts";
+                showPara.style.color = "green";
+            } else {
+                showPara.innerHTML = " Better luck try next after improvment!";
+                showPara.style.color = "red";
+            }
+            let tdata = document.querySelector("#data");
+            tdata.innerHTML = " <tr><td> " + userGrad + "</td><td>vcb</td><td>vb</td><td>vb</td><td>vb</td><td>cvb</td></tr > ";
+            document.querySelector("#tb").style.display = "block"
+        }
+    </script>
+</body>
+
+</html>

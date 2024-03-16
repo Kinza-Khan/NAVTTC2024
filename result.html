@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #tb {
+        display: none;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+    }
+</style>
+
+<body>
+    <h1>Grade Find SYSTEM</h1>
+    <label for="">name</label>
+    <input type="text" name="" id="userName"><br><br>
+    <label for="">english</label>
+    <input type="text" name="" id="english"><br><br>
+    <label for="">urdu</label>
+    <input type="text" name="" id="urdu"><br><br>
+    <label for="">maths</label>
+    <input type="text" name="" id="maths"><br><br>
+    <label for="">Physics</label>
+    <input type="text" name="" id="physics"><br><br>
+    <label for="">chemistry</label>
+    <input type="text" name="" id="chemistry"><br><br>
+    <button id="btn" onclick="resultSystem()">click</button>
+    <p id="show"></p>
+    <div id="tb">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>chemistry</th>
+                    <th>physics</th>
+                    <th>maths</th>
+                    <th>urdu</th>
+                    <th>english</th>
+                    <th>obtained marks</th>
+                    <th>total marks</th>
+                    <th>percentage</th>
+                    <th>grade</th>
+                    <th>remarks</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function resultSystem() {
+            let userName = document.querySelector("#userName").value;
+            let english = parseInt(document.querySelector("#english").value);
+            let urdu = parseInt(document.querySelector("#urdu").value);
+            let maths = parseInt(document.querySelector("#maths").value);
+            let physics = parseInt(document.querySelector("#physics").value);
+            let chemistry = parseInt(document.querySelector("#chemistry").value);
+            let total = 500;
+            let obtainedMarks = parseInt(english + urdu + physics + chemistry + maths);
+            let percentage = obtainedMarks / total * 100;
+            let grade = "";
+            let remarks = "";
+            if (percentage > 90 && percentage <= 100) {
+                grade = "A+1";
+                remarks = "EXCELLENT";
+            } else if (percentage > 80) {
+                grade = "A+";
+                remarks = "VERY GOOD";
+            }
+            else if (percentage > 70) {
+                grade = "A";
+                remarks = "GOOD";
+            }
+            else if (percentage > 60) {
+                grade = "B";
+                remarks = "BETTER";
+            }
+            else if (percentage > 50) {
+                grade = "C";
+                remarks = "KEEP IT UP";
+            }
+            else if (percentage > 40) {
+                grade = "D";
+                remarks = "NEED TO WORK HARD";
+            }
+            else {
+
+                grade = "FAIL";
+                remarks = "TRY AGAIN";
+
+            }
+            document.querySelector("#data").innerHTML = `<tr>
+    <td>`+ userName + `</td>
+    <td>`+ english + `</td>
+    <td>`+ urdu + `</td>
+    <td>`+ maths + `</td>
+    <td>`+ physics + `</td>
+    <td>`+ chemistry + `</td>
+    <td>`+ obtainedMarks + `</td>
+    <td>`+ total + `</td>
+    <td>`+ percentage + `</td>
+    <td>`+ grade + `</td>
+    <td>`+ remarks + `</td>
+</tr>`;
+            document.querySelector("#tb").style.display = "block"
+        }
+    </script>
+</body>
+
+</html>
