@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiDimensional</title>
+</head>
+
+<body>
+    <h1></h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>EMail</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        let stdData = [
+            ["ali", 21, "karachi"],
+            ["aqsa", 22, "lahore", "aqsa@gmail.com"],
+            ["asim", 18],
+            ["arhama", 24, "lahore"]
+        ];
+        let tbody = document.querySelector("tbody");
+        let printData = document.querySelector('h1');
+        // printData.innerHTML = stdData[1][0] + " " + stdData[1][1];
+        // console.log(stdData[1]);
+        let row = "";
+        for (i = 0; i < stdData.length; i++) {
+
+            row += "<tr>";
+            for (j = 0; j < stdData[i].length; j++) {
+                row += "<td>" + stdData[i][j] + "</td>";
+            }
+            row += "</tr>";
+
+        }
+
+
+        tbody.innerHTML = row;
+
+        let n1 = 0;
+        let n2 = 1;
+        for (i = 0; i <= 10; i++) {
+            let res = n1 + n2;
+            console.log(res);
+
+            n1 = n2;
+            n2 = res;
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
