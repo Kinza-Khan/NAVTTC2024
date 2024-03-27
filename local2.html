@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple users</title>
+</head>
+<body>
+<h1>Register</h1>
+    <div class="form-group">
+        <label for="">Name</label>
+        <input type="text" id="userName">
+    </div>
+    
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="text" id="userPassword">
+    </div>
+    <button onclick="reg()">Register</button>
+
+    <h1>Login</h1>
+    <div class="form-group">
+        <label for="">Name</label>
+        <input type="text" id="uName">
+    </div>
+    
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="text" id="uPassword">
+    </div>
+    <button onclick="usLogin()">Register</button>
+    <h2></h2>
+    <script>
+        let myUsersData = [];
+        let reg = () =>{       
+            let uName = document.querySelector("#userName").value;
+            let uPass = document.querySelector("#userPassword").value;
+            if(uName && uPass){
+            myUsersData.push({name:uName,password:uPass});
+            localStorage.setItem('aptechStudents',JSON.stringify(myUsersData));
+            alert("user register successfully");
+        }
+        else{
+            alert("please enter something");
+        }
+        }
+        // login
+        let usLogin = () =>{
+            let uName = document.querySelector("#uName").value;
+            let uPassword = document.querySelector("#uPassword").value;
+            let strData = localStorage.getItem('aptechStudents');
+            console.log(strData);
+             let allParsedData = JSON.parse(localStorage.getItem('aptechStudents'));
+            console.log(allParsedData);
+            let matchedData = allParsedData.find(user=>{
+                return user.name == uName && user.password == uPassword;
+            })
+            if(matchedData){
+                document.querySelector("h2").innerHTML = "welcome "+ uName;
+            }
+            else{
+                document.querySelector("h2").innerHTML = "Invalid user name or password";
+            }
+            
+        }
+    </script>
+</body>
+</html>
