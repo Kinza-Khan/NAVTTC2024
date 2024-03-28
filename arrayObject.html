@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Object</title>
     <style>
+        .container{
+            position: relative;
+            top: 50px;
+        }
         .row {
             /* height: 300px; */
             /* border:  1px solid red; */
@@ -43,7 +47,7 @@
             height: 60px;
             /* border: 1px solid blue; */
             position: relative;
-            top: 10px;
+            top: 0px;
         }
 
         .content h3 {
@@ -53,10 +57,25 @@
             top: -10px;
             color: #233d7b;
         }
+        .content p{
+                position: relative;
+                top: -20px;
+                text-align: center;
+        }
+        .container-fluid{
+            /* padding: 20px; */
+        }
+        .container-fluid input{
+            height: 20px;
+            width: 40%;
+        }
     </style>
 </head>
 
 <body>
+    <div class="container-fluid">
+        <input type="text" id="inpSearch" onkeyup="fun()">
+    </div>
     <div class="container">
         <div class="row" id="fnCars">
 
@@ -65,6 +84,8 @@
 
 
     <script>
+
+        
         let arrayObj = [
             { cName: "Toyota Corolla", cPrice: 900000, cImage: "img/car1.jpg" },
             { cName: "Honda City", cPrice: 500000, cImage: "img/car2.jpg" },
@@ -78,21 +99,29 @@
             col1 += ` <div class="d">
                 <div class="imgDiv">
                     <img src="`+ arrayObj[i].cImage + `" alt="">
-                </div>
-               
+                </div>              
                 <div class="content">
                     <h3>`+ arrayObj[i].cName + `</h3>
                     <p>PKR `+ arrayObj[i].cPrice + `</p>
                 
                 </div>
-                
-                
             </div>`
-        }
-
-
-        
+        }  
         row1.innerHTML = col1;
+  let fun = ()=>{
+    let arrayObj = [
+            { cName: "Toyota Corolla", cPrice: 900000, cImage: "img/car1.jpg" },
+            { cName: "Honda City", cPrice: 500000, cImage: "img/car2.jpg" },
+            { cName: "Toyota Corolla", cPrice: 9600000, cImage: "img/car3.png" },
+            { cName: "Mercedees", cPrice: 9100000, cImage: "img/car4.jpg" }
+        ];
+        let inpVal = document.querySelector("#inpSearch").value;
+
+        let searchData = arrayObj.filter(element =>{
+            return element.cName == inpVal ;
+        })
+        console.log(searchData);
+  }
     </script>
 </body>
 
