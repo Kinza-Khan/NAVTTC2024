@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Object</title>
     <style>
-        .container{
+        .container {
             position: relative;
             top: 50px;
         }
-        .row {
-            /* height: 300px; */
-            /* border:  1px solid red; */
-            display: flex;
-            /* flex-wrap: wrap; */
-            justify-content: space-evenly;
 
+        .row {
+            display: flex;
+            justify-content: space-evenly;
         }
 
         .d {
@@ -24,18 +21,9 @@
             width: 250px;
             border-radius: 3px;
             border: 1px solid rgb(179, 176, 176);
-            /* background-color: gray; */
-        }
-
-        .container h1 {
-            width: 400px;
-            position: relative;
-            left: 50px;
-            /* background-color: yellow; */
         }
 
         .imgDiv {
-            /* border: 1px solid yellow; */
             height: 170px;
         }
 
@@ -45,27 +33,24 @@
 
         .content {
             height: 60px;
-            /* border: 1px solid blue; */
             position: relative;
             top: 0px;
         }
 
         .content h3 {
-            /* background-color: yellow; */
             text-align: center;
             position: relative;
             top: -10px;
             color: #233d7b;
         }
-        .content p{
-                position: relative;
-                top: -20px;
-                text-align: center;
+
+        .content p {
+            position: relative;
+            top: -20px;
+            text-align: center;
         }
-        .container-fluid{
-            /* padding: 20px; */
-        }
-        .container-fluid input{
+
+        .container-fluid input {
             height: 20px;
             width: 40%;
         }
@@ -82,46 +67,56 @@
         </div>
     </div>
 
-
     <script>
-
-        
+        let row1 = document.querySelector("#fnCars");
         let arrayObj = [
             { cName: "Toyota Corolla", cPrice: 900000, cImage: "img/car1.jpg" },
             { cName: "Honda City", cPrice: 500000, cImage: "img/car2.jpg" },
             { cName: "Toyota Corolla", cPrice: 9600000, cImage: "img/car3.png" },
-            { cName: "Mercedees", cPrice: 9100000, cImage: "img/car4.jpg" }
+            { cName: "Mercedes", cPrice: 9100000, cImage: "img/car4.jpg" }
         ];
-        let row1 = document.querySelector("#fnCars");
-        let col1 = "";
-        for (i = 0; i < arrayObj.length; i++) {
 
-            col1 += ` <div class="d">
-                <div class="imgDiv">
-                    <img src="`+ arrayObj[i].cImage + `" alt="">
-                </div>              
-                <div class="content">
-                    <h3>`+ arrayObj[i].cName + `</h3>
-                    <p>PKR `+ arrayObj[i].cPrice + `</p>
-                
-                </div>
-            </div>`
-        }  
-        row1.innerHTML = col1;
-  let fun = ()=>{
-    let arrayObj = [
-            { cName: "Toyota Corolla", cPrice: 900000, cImage: "img/car1.jpg" },
-            { cName: "Honda City", cPrice: 500000, cImage: "img/car2.jpg" },
-            { cName: "Toyota Corolla", cPrice: 9600000, cImage: "img/car3.png" },
-            { cName: "Mercedees", cPrice: 9100000, cImage: "img/car4.jpg" }
-        ];
-        let inpVal = document.querySelector("#inpSearch").value;
+        let MyData = () => {
+            let col1 = "";
+            for (i = 0; i < arrayObj.length; i++) {
+                col1 += ` <div class="d">
+                    <div class="imgDiv">
+                        <img src="`+ arrayObj[i].cImage + `" alt="">
+                    </div>              
+                    <div class="content">
+                        <h3>`+ arrayObj[i].cName + `</h3>
+                        <p>PKR `+ arrayObj[i].cPrice + `</p>
+                    </div>
+                </div>`
+            }
+            row1.innerHTML = col1;
+        }
 
-        let searchData = arrayObj.filter(element =>{
-            return element.cName == inpVal ;
-        })
-        console.log(searchData);
-  }
+        MyData();
+
+        let fun = () => {
+            let inpVal = document.querySelector("#inpSearch").value;
+            let searchData = arrayObj.filter(element => {
+                return element.cName.toLowerCase().includes(inpVal.toLowerCase());
+            });
+            let c2 = "";
+            if (searchData.length > 0) {
+                for (let i = 0; i < searchData.length; i++) {
+                    c2 += `<div class="d">
+                        <div class="imgDiv">
+                            <img src="` + searchData[i].cImage + `" alt="">
+                        </div>              
+                        <div class="content">
+                            <h3>` + searchData[i].cName + `</h3>
+                            <p>PKR ` + searchData[i].cPrice + `</p>
+                        </div>
+                    </div>`;
+                }
+            } else {
+                MyData();
+            }
+            row1.innerHTML = c2;
+        }
     </script>
 </body>
 
