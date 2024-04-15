@@ -87,12 +87,12 @@
                     <div class="content">
                         <h3>`+ arrayObj[i].cName + `</h3>
                         <p>PKR `+ arrayObj[i].cPrice + `</p>
-                        <button data-toggle="modal" data-target="#a" class="btn btn-info">Details</button>
+                        <button data-toggle="modal" data-target="#modelId`+i+`" class="btn btn-info">Details</button>
                     </div>
                 </div>
                 
                 
-                <div class="modal fade" id="a" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                <div class="modal fade" id="modelId`+i+`" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
